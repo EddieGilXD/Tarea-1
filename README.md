@@ -43,8 +43,11 @@ Convierto el numero a positivo 18 y hago el mismo proceso de division.
 
 ![Captura de pantalla 2024-10-27 201528](https://github.com/user-attachments/assets/33988ed2-798d-4a1c-9347-b99a6b5aa1b7)
 
-El resultado es 0001 0010, pero procedemos a cambiar los 0 por el numero 1.
+El resultado es 0001 0010, pero procedemos a cambiar los 0 por el numero 1 y sumamos 0000 0001 para el complemento a dos.
 
-El numero binario de -18 en 8 bits es de 1110 1101.
+El numero binario de -18 en 8 bits es de 1110 1110.
+
+### **Realice las tablas de verdad de las operaciones logicas booleana.**
+
 
 
