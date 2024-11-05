@@ -85,5 +85,68 @@ atrasados.
 - Por ejemplo, el uso de la función sería:
   - console.log(evaluateRisk(15000, true, 4, true)); // "High"
 
+![Captura de pantalla 2024-11-04 184453](https://github.com/user-attachments/assets/c122a2f1-b0b9-4b38-a28b-7fdcef80fd4b)
+
+**Codigo utilizado:**
+```
+function evaluateRisk(income, hasLoans, latePayments, isStudent) {
+    if ((income < 20000 && latePayments >= 3) || (hasLoans = true && isStudent == true)) {
+    return 'High Risk';
+   } else if (income > 20000 && income < 50000 && latePayments <= 2){
+    return "Riskt Moderate";
+   } else {
+    return "Risk Low";
+   }
+}
+
+console.log(evaluateRisk(15000, true, 4, true));
+
+```
+
+evaluateRisk(15000, true, 4, true);
+
+### **Ejercicio 2: Motor de Recomendación de Productos***
+Diseñe una función para recomendar productos a un usuario basado en varios factores.
+
+- Cree una función recommendProduct(age, isMember, purchaseHistory):
+  - Un producto de alta tecnología se recomienda si:
+    - La persona es miembro y ha comprado al menos 5 productos tecnológicos antes.
+    - O si la persona Aene entre 18 y 30 años y ha comprado 2 o más productos
+de moda.
+  - Un producto de moda se recomienda si:
+    - La persona no es miembro, pero ha comprado al menos 3 productos antes.
+    - O si Aene entre 25 y 40 años.
+    - En cualquier otro caso, recomienda un producto genérico.
+  - purchaseHistory es un objeto con la canAdad de productos comprados por categoría: {tech: number, fashion: number, other: number }.
+  - Por ejemplo, el uso de la función sería:
+    - console.log(recommendProduct(22, true, { tech: 6, fashion: 1, other: 2 })); //
+"High-Tech Product".
+
+![Captura de pantalla 2024-11-04 183111](https://github.com/user-attachments/assets/3b5f23b9-3901-47c4-a319-ed0a88e94ed4)
+
+**Codigo Utlizado:**
+
+```
+function recommendProduct(age, isMember, purchaseHistory){
+    /* Recivo el objeto por medio de purchaseHistory*/
+    let {tech, fashion, other} = purchaseHistory;
+
+    /* Analiza */
+    if ((isMember == true && tech >= 5) || (age >= 18 && age <= 30 && fashion >= 2)){
+        return "Producto de Alta tecnologia"
+    } else if ((isMember == false && (tech + fashion + other) >= 3) || (age >= 25 && age <=40)) /*(tech + Fashion + other suma los productos)*/{
+        return "Producto de moda";
+    } else /*Si ninguo de los anterires aplica*/ {
+        return "Producto generico";
+    }    
+}
+/*Test*/
+console.log(recommendProduct(22, true, { tech: 6, fashion: 1, other: 2 }));
+console.log(recommendProduct(30, false, { tech: 2, fashion: 1, other: 0 }));
+console.log(recommendProduct(45, false, { tech: 1, fashion: 1, other: 0 }));
+
+```
+
+
 
 
